@@ -1,0 +1,22 @@
+<%= form_with(model: tamanho, local: true) do |form| %>
+  <% if tamanho.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tamanho.errors.count, "error") %> prohibited this tamanho from being saved:</h2>
+
+      <ul>
+      <% tamanho.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.text_field :numero %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
